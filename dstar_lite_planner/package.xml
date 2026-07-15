@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>dstar_lite_planner</name>
+  <version>0.0.1</version>
+  <description>D* Lite planner</description>
+  <maintainer email="a@a.com">a</maintainer>
+  <license>MIT</license>
+  <depend>rclcpp</depend>
+  <depend>nav_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+</package>

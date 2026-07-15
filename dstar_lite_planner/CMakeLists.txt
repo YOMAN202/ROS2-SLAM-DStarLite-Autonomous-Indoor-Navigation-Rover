@@ -1,0 +1,17 @@
+cmake_minimum_required(VERSION 3.8)
+project(dstar_lite_planner)
+if(CMAKE_COMPILER_IS_GNUCXX OR CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+  add_compile_options(-Wall -Wextra -O2)
+endif()
+find_package(ament_cmake REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(nav_msgs REQUIRED)
+find_package(geometry_msgs REQUIRED)
+add_executable(dstar_lite_planner src/dstar_lite_planner.cpp)
+target_include_directories(dstar_lite_planner PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include>)
+target_compile_features(dstar_lite_planner PUBLIC cxx_std_17)
+ament_target_dependencies(dstar_lite_planner rclcpp nav_msgs geometry_msgs)
+install(TARGETS dstar_lite_planner DESTINATION lib/${PROJECT_NAME})
+ament_package()
